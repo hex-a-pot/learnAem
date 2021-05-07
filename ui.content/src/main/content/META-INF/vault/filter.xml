@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/learnAEM" mode="merge"/>
+    <filter root="/content/learnAEM" mode="merge"/>
+    <filter root="/content/dam/learnAEM" mode="merge"/>
+</workspaceFilter>

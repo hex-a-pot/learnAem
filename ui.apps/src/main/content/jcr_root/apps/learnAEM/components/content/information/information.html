@@ -1,0 +1,25 @@
+<h2> THIS IS INFORMATION COMPONENT </h2>
+<div data-sly-use.information="com.adobe.aem.guides.learnAEM.core.models.InformationImpl" @rAttribute = 'attribute from crx'></div>
+<div>Name - ${information.name} </div>
+<div>Age - ${information.age} </div>
+<div>Address - ${information.address}</div>
+<div data-sly-list.item="${information.booksArray@ begin = 0,end = 3} ">
+<p>BOOK : <b>${item}</b></p>
+</div>
+<div data-sly-list.item = "${information.booksMap}">
+<p> BOOK NAME : <b> ${item}</b><br>
+	BOOK AUTHOR : <b> ${information.booksMap[item]} </b>
+</p>
+</div>
+<div data-sly-repeat="${currentPage.listChildren}">${item.name}</div>
+
+<div data-sly-use.booksTemplate = "tutTemplate.html">
+<sly data-sly-call = "${booksTemplate.authorBooks @ books = information}">
+</div>
+
+<div data-sly-resource = "${'/content/we-retail/us'}"></div>
+---------------------------------------------------------------------------------------------
+<div>Information from OSGI service - ${information.osgiServiceMessage}</div> 
+<div>Length from configured OSGI service - ${information.osgiConfigLength}</div>
+<div>Breadth from configured OSGI service - ${information.osgiConfigBreadth}</div>
+
