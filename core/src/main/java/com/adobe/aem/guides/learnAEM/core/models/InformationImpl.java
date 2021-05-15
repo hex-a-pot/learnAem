@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -34,7 +35,7 @@ public class InformationImpl implements Information {
 	private FirstConfig firstConfig;
 	
 	@Inject
-	@Via("resource")
+//	@Via("resource")
 	@Default(values = "DUMMY")
 	String name;
 	
@@ -125,6 +126,19 @@ public class InformationImpl implements Information {
 		
 		
 		return null;
+	}
+
+	@Override
+	public Map<String,String> getResolveResource() throws LoginException {
+		// TODO Auto-generated method stub
+		return firstService.getProperties();
+
+	}
+
+	@Override
+	public List<String> getCsvDetails() throws LoginException {
+		return firstService.getCsvDetails();
+		
 	}
 
 //	@Override
