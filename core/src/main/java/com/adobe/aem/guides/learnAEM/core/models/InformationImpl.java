@@ -20,6 +20,7 @@ import com.adobe.granite.rest.utils.Resources;
 import com.day.cq.wcm.api.Page;
 import com.tutorial.components.FirstConfig;
 import com.tutorial.services.FirstService;
+import com.tutorial.services.PageService;
 
 @Model(adaptables = {SlingHttpServletRequest.class, Resources.class},
 		adapters = Information.class,
@@ -33,6 +34,9 @@ public class InformationImpl implements Information {
 	
 	@OSGiService
 	private FirstConfig firstConfig;
+	
+	@OSGiService
+	private PageService pageService;
 	
 	@Inject
 //	@Via("resource")
@@ -136,9 +140,21 @@ public class InformationImpl implements Information {
 	}
 
 	@Override
-	public List<String> getCsvDetails() throws LoginException {
+	public List<String> getCsvDetails() throws Exception {
 		return firstService.getCsvDetails();
 		
+	}
+
+	@Override
+	public String getCreatePage() {
+		// TODO Auto-generated method stub
+		try {
+			return pageService.createPage("csvDemo",firstService.getCsvDetails());
+		} catch (LoginException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
 	}
 
 //	@Override

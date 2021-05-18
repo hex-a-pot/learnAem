@@ -19,5 +19,6 @@ public interface Information {
 	public Map<String,String> getBooksMap();
 	public List<Map<String,String>> getBookDetailsWithMap();
 	public Map<String,String> getResolveResource() throws LoginException;
-	public List<String> getCsvDetails() throws LoginException;
+	public List<String> getCsvDetails() throws LoginException, Exception;
+	public String getCreatePage();
 }
