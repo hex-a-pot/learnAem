@@ -8,5 +8,7 @@ public interface Resume {
 	String getGender();
 //	boolean getCheckAuthor();
 	List<String> getPhoneNumber(); 
+	void dummyFunc();
+	void anotherDummyFunc();
 
 }
