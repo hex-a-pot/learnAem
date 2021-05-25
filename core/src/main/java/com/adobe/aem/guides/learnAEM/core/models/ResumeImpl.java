@@ -78,6 +78,18 @@ public class ResumeImpl implements Resume {
 			
 	}
 
+	@Override
+	public void dummyFunc() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void anotherDummyFunc() {
+		// TODO Auto-generated method stub
+		
+	}
+
 //	@Override
 //	public boolean getCheckAuthor() {
 //		// TODO Auto-generated method stub
